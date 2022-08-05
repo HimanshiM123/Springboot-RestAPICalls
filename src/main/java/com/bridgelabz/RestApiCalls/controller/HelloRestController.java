@@ -14,4 +14,8 @@ public class HelloRestController {
     public String query(@RequestParam(value = "name") String name){
         return "Hello" + name + "!";
     }
+    @GetMapping("/param/{name}")
+    public String post(@PathVariable String name){
+        return "Hello " + name + "!";
+    }
 }
