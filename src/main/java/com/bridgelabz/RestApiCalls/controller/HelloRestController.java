@@ -1,14 +1,17 @@
 package com.bridgelabz.RestApiCalls.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import com.bridgelabz.RestApiCalls.model.User;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = ("/hello"))
+@RequestMapping(value = {"/hello"})
 public class HelloRestController {
     @RequestMapping(value = {"/home"})
     public String sayHello(){
         return "Hello From Bridgelabz";
+    }
+   @RequestMapping(value = {"/query"}, method = RequestMethod.GET)
+    public String query(@RequestParam(value = "name") String name){
+        return "Hello" + name + "!";
     }
 }
