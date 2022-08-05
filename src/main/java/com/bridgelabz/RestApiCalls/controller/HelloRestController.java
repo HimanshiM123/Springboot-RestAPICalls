@@ -18,4 +18,8 @@ public class HelloRestController {
     public String post(@PathVariable String name){
         return "Hello " + name + "!";
     }
+    @PostMapping("/post")
+    public String post(@RequestBody User user){
+        return "Hello" + user.getFirstName() + " " + user.getLastName();
+    }
 }
